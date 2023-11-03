@@ -1,14 +1,14 @@
-package com.ever.market;
+	package com.ever.market;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+	import org.springframework.boot.SpringApplication;
+	import org.springframework.boot.autoconfigure.SpringBootApplication;
+	import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication
-public class MarketApplication {
+	@SpringBootApplication
+	@EnableJpaRepositories
+	public class MarketApplication {
+		public static void main(String[] args) {
 
-	public static void main(String[] args) {
-
-		SpringApplication.run(MarketApplication.class, args);
+			SpringApplication.run(MarketApplication.class, args);
+		}
 	}
-
-}

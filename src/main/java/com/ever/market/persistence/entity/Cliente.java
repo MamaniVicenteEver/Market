@@ -1,37 +1,30 @@
 package com.ever.market.persistence.entity;
 
-import jakarta.persistence.Entity;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+
 import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
-
+@Getter
+@Setter
 @Entity
-@Table(name = "Clientes")
+@Table(name="clientes")
 public class Cliente {
 
     @Id
-    @Column(name = "id", length = 20)
     private String id;
-
-    @Column(name = "nombre")
     private String nombre;
-
-    @Column(name = "apellidos")
     private String apellidos;
-
-    @Column(name = "celular")
-    private Double celular;
-
-    @Column(name = "direccion")
+    private Long celular;
     private String direccion;
 
-    @Column(name = "correo_electronico")
+    @Column(name="correo_electronico")
     private String correoElectronico;
 
     @OneToMany(mappedBy = "cliente")
+    @JsonManagedReference
     private List<Compra> compras;
-
-
-
-    // Getters and setters
 }

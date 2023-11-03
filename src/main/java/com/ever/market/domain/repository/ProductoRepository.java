@@ -1,4 +1,4 @@
-package com.ever.market.persistence.crud;
+package com.ever.market.domain.repository;
 
 import com.ever.market.persistence.crud.ProductoCrudRepository;
 import com.ever.market.persistence.entity.Producto;

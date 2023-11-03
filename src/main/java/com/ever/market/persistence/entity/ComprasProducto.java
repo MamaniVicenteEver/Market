@@ -1,50 +1,29 @@
 package com.ever.market.persistence.entity;
 
-import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "compras_productos")
 public class ComprasProducto {
     @EmbeddedId
     private ComprasProductoPK id;
+
     private Integer cantidad;
-    private BigDecimal total;
+    private Double total;
     private Boolean estado;
 
     @ManyToOne
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
+    @JsonBackReference
     private Compra compra;
 
     @ManyToOne
     @JoinColumn(name = "id_producto", insertable = false, updatable = false)
+    @JsonBackReference
     private Producto producto;
-
-
-    public ComprasProductoPK getId() {
-        return id;
-    }
-
-    public void setId(ComprasProductoPK id) {
-        this.id = id;
-    }
-
-    public Integer getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
-    }
-
-
-
-    public Boolean getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
-    }
 }
