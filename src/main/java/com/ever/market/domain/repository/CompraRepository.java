@@ -1,5 +1,5 @@
 package com.ever.market.domain.repository;
 
-public interface ProductoRepository {
+public interface CompraRepository {
 
 }
