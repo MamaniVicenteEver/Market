@@ -4,13 +4,11 @@ package com.ever.market.persistence.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-@NoArgsConstructor
 @Table(name = "productos")
 public class Producto {
 
@@ -39,4 +37,5 @@ public class Producto {
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     @JsonBackReference
     private Categoria categoria;
+
 }
