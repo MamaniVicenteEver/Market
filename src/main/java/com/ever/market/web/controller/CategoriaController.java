@@ -1,5 +1,6 @@
 package com.ever.market.web.controller;
 
+import com.ever.market.domain.mapstruct.Category;
 import com.ever.market.domain.service.CategoriaService;
 import com.ever.market.persistence.entity.Categoria;
 import java.util.List;
@@ -21,7 +22,7 @@ public class CategoriaController {
   }
 
   @GetMapping
-  public ResponseEntity<List<Categoria>> getAll() {
+  public ResponseEntity<List<Category>> getAll() {
     return ResponseEntity.ok(this.categoriaService.getAll());
   }
 }

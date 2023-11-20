@@ -1,5 +1,6 @@
 package com.ever.market.web.controller;
 
+import com.ever.market.domain.mapstruct.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ public class ClienteController {
   }
 
   @GetMapping
-  public ResponseEntity<List<Cliente>> getAll() {
+  public ResponseEntity<List<Customer>> getAll() {
     return ResponseEntity.ok(this.clienteService.getAll());
   }
 }

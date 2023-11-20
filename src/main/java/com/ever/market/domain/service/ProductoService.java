@@ -1,24 +1,18 @@
 package com.ever.market.domain.service;
 
-import com.ever.market.persistence.entity.Producto;
+import com.ever.market.domain.mapstruct.Product;
+import com.ever.market.domain.repository.ProductRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
-import com.ever.market.persistence.crud.ProductoCrudRepository;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
 public class ProductoService {
 
-  private final ProductoCrudRepository productoCrudRepository;
-
   @Autowired
-  public ProductoService(ProductoCrudRepository productoCrudRepository) {
-    this.productoCrudRepository = productoCrudRepository;
-  }
+  private ProductRepository productRepository;
 
-  public List<Producto> getAll() {
-    return (List<Producto>) this.productoCrudRepository.findAll();
+  public List<Product> getAll() {
+    return  productRepository.getAll();
   }
 }

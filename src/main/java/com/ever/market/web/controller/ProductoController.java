@@ -1,5 +1,6 @@
 package com.ever.market.web.controller;
 
+import com.ever.market.domain.mapstruct.Product;
 import com.ever.market.domain.service.ProductoService;
 import com.ever.market.persistence.entity.Producto;
 import java.util.List;
@@ -20,8 +21,8 @@ public class ProductoController {
     this.productoService = productoService;
   }
 
-  @GetMapping
-  public ResponseEntity<List<Producto>> getAll() {
+  @GetMapping("/all")
+  public ResponseEntity<List<Product>> getAll() {
     return ResponseEntity.ok(this.productoService.getAll());
   }
 }
