@@ -4,6 +4,5 @@ import com.ever.market.domain.mapstruct.Customer;
 import java.util.List;
 
 public interface IClienteRepository {
-
   List<Customer> getAll();
 }

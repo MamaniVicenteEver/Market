@@ -7,7 +7,7 @@ import java.util.Optional;
 /**
  * Interfaz de repositorio para acceder y gestionar datos de Productos.
  */
-public interface ProductRepository {
+public interface IProductRepository {
 
   /**
    * Obtiene todos los productos.

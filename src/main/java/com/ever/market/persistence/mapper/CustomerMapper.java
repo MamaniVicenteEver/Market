@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring" )
 public interface CustomerMapper {
 
   @Mappings({
@@ -18,14 +18,14 @@ public interface CustomerMapper {
       @Mapping(source = "celular", target = "cellPhone"),
       @Mapping(source = "direccion", target = "address"),
       @Mapping(source = "correoElectronico", target = "email"),
-      @Mapping(source = "compras", target = "purchases")
+      //@Mapping(source = "compras", target = "purchases")
   })
   Customer toCustomer(Cliente cliente);
 
   List<Customer> toCustomers(List<Cliente> clientes);
 
   @InheritInverseConfiguration
-  //@Mapping(target = "compras", ignore = true)
+  @Mapping(target = "compras", ignore = true)
   Cliente toCliente(Customer customer);
 
 }

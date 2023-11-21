@@ -37,7 +37,8 @@ public class Compra {
     @JsonBackReference
     private Cliente cliente;
 
-    @OneToMany(mappedBy = "compra")
+    // mappedBy = "compra" -> es el nombre del atributo en la clase ComprasProducto
+    @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
     @JsonManagedReference
     private List<ComprasProducto> productos;
 }

@@ -20,6 +20,7 @@ public class Categoria {
     private Integer idCategoria;
 
     private String descripcion;
+
     private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")

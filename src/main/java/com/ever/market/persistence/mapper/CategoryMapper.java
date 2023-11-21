@@ -8,13 +8,13 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring" )
 public interface CategoryMapper {
   @Mappings({
       @Mapping(source = "idCategoria", target = "categoryId"),
       @Mapping(source = "descripcion", target = "category"),
       @Mapping(source = "estado", target = "active"),
-      @Mapping(source = "productos", target = "product")
+      //@Mapping(source = "productos", target = "product")
   })
 
   Category toCategory(Categoria categoria);
@@ -22,7 +22,7 @@ public interface CategoryMapper {
   List<Category> toCategories(List<Categoria> categorias);
 
   @InheritInverseConfiguration
-  //@Mapping(target = "productos", ignore = true)
+  @Mapping(target = "productos", ignore = true)
   Categoria toCategoria(Category category);
 
 

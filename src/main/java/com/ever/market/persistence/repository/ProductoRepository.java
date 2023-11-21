@@ -1,7 +1,7 @@
 package com.ever.market.persistence.repository;
 
 import com.ever.market.domain.mapstruct.Product;
-import com.ever.market.domain.repository.ProductRepository;
+import com.ever.market.domain.repository.IProductRepository;
 import com.ever.market.persistence.crud.ProductoCrudRepository;
 import com.ever.market.persistence.entity.Producto;
 import com.ever.market.persistence.mapper.ProductMapper;
@@ -13,7 +13,7 @@ import java.util.Optional;
 //Se encarga de interactuar con la base de datos
 
 @Repository
-public class ProductoRepository implements ProductRepository {
+public class ProductoRepository implements IProductRepository {
 
     @Autowired
     private ProductoCrudRepository productoCrudRepository;

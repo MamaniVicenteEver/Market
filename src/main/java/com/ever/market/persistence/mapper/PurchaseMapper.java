@@ -8,7 +8,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 
-@Mapper(componentModel = "spring", uses = {CustomerMapper.class})
+@Mapper(componentModel = "spring", uses = {PurchaseItemMapper.class})
 public interface PurchaseMapper {
 
   @Mappings({
@@ -18,16 +18,12 @@ public interface PurchaseMapper {
       @Mapping(source = "medioPago", target = "paymentMethod"),
       @Mapping(source = "comentario", target = "comment"),
       @Mapping(source = "estado", target = "state"),
-      @Mapping(source = "cliente", target = "customer"),
       @Mapping(source = "productos", target = "items")
-
   })
-  Purchase tuPurchase(Compra compra);
-
+  Purchase toPurchase(Compra compra);
   List<Purchase> toPurchases(List<Compra> compras);
 
   @InheritInverseConfiguration
-  //@Mapping(target = "cliente", ignore = true)
+  @Mapping(target = "cliente", ignore = true)
   Compra toCompra(Purchase purchase);
-
 }

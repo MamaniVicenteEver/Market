@@ -14,8 +14,6 @@ public class Purchase {
   private String paymentMethod;
   private String comment;
   private String state;
-  private Customer customer;
-
-  private List<ComprasProducto> items;
+  private List<PurchaseItem> items;
 
 }

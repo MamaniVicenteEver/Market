@@ -14,5 +14,4 @@ public class Customer {
   private Long cellPhone;
   private String address;
   private String email;
-  private List<Compra> purchases;
 }
